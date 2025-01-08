@@ -1,0 +1,25 @@
+<div class="row">
+ <div class="col text-right">
+   <button routerLink="addUser" mat-raised-button color="primary" >Add User</button>
+ </div>
+</div>
+
+<ng-container *ngIf="userInfo; else nouser">
+<div class="row">
+  <div class="col-md-4">
+     <ul class="list-group">
+       <li 
+       [routerLink]="[user.userId]"
+       *ngFor="let user of userInfo"
+       class="list-group-item">{{user.userName}}</li>
+     </ul>
+  </div>
+  <div class="col-md-8">
+
+  </div>
+</div>
+
+</ng-container>
+<ng-template #nouser>
+  <p class="alert alert-info">NO USERS!!!</p>
+</ng-template>

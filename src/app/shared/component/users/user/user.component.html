@@ -1,0 +1,12 @@
+<ng-container *ngIf="userInfo; else nouser">
+    <p>This is user with name <strong> {{userInfo.userName}}</strong> and with Id <strong>{{userInfo.userId}}</strong></p>
+
+  <button routerLink="edit" mat-raised-button color="primary" >Edit User</button>
+  <button (click)="onuserRemove()" class="ml-3" mat-raised-button color="warn">Remove User</button>
+
+</ng-container>
+
+<ng-template #nouser>
+   <p class="alert alert-info">NO USER FOUND !!!
+   </p>
+</ng-template>
